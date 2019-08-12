@@ -1,0 +1,25 @@
+﻿<Window x:Class="Restorator.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restorator"
+        mc:Ignorable="d"
+        Title="LoginPage" Height="405.333" Width="382.5" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Topmost="True">
+    <Grid Background="#FF1C1C1B">
+        <StackPanel  Margin="50,0,50,0">
+            <TextBox x:Name="UserName" BorderBrush="AntiqueWhite" materialDesign:HintAssist.Hint="Username" Height="30" Margin="10" SelectionBrush="#CD5C5C" CaretBrush="#CD5C5C" Foreground="AntiqueWhite"  ></TextBox>
+            <PasswordBox x:Name="Passwords" PasswordChar="*" materialDesign:HintAssist.Hint="Password" BorderBrush="AntiqueWhite" Height="30" Margin="10" SelectionBrush="#CD5C5C" CaretBrush="#CD5C5C"  Foreground="AntiqueWhite"></PasswordBox>
+            <Border CornerRadius="15">
+                <Button  Click="Button_Click_1" Margin="20" Content="Login" Background="{x:Null}" BorderBrush="AntiqueWhite"></Button>
+            </Border>
+            <Label Content="Forgot your password?" Foreground="AntiqueWhite" HorizontalAlignment="Center"></Label>
+            <Separator Margin="10"></Separator>
+            <Label Content="Don't have an account?" Foreground="AntiqueWhite" HorizontalAlignment="Center"></Label>
+            <Border CornerRadius="15">
+                <Button Margin="15" Content="SignUp" Background="{x:Null}" BorderBrush="AntiqueWhite" Click="Button_Click"></Button>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

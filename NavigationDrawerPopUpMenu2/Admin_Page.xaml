@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Restorator.Admin_Page"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restorator"
+                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="WhiteSmoke">
+        <StackPanel Margin="20">
+           
+        <Button x:Name="Get_image" Content="Выбрать картинку" Click="Get_image_Click" Height="25"></Button>
+            <Label  Content="Название" Height="25"></Label>
+            <TextBox x:Name="Name" Height="25"></TextBox>
+            <ComboBox x:Name="SelectCombo" Width="108"  materialDesign:HintAssist.Hint="Тип Заведения" SelectionChanged="SelectCombo_Selected" HorizontalAlignment="Left">
+                <ComboBoxItem x:Name="Ресторан" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/010-wine.png"></Image>
+                        <TextBlock Text="Ресторан" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Пиццерия" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/016-pizza.png"></Image>
+                        <TextBlock Text="Пиццерия" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Кофейня" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/012-coffee-1.png"></Image>
+                        <TextBlock Text="Кофейня" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Бар" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/028-wine-1.png"></Image>
+                        <TextBlock Text="Бар" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="ФастФуд" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/009-burger.png"></Image>
+                        <TextBlock Text="ФастФуд" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Кафе" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/050-cafe.png"></Image>
+                        <TextBlock Text="Кафе" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+
+            </ComboBox>
+            <Label Content="Время работы(8:00-22:00)" Height="25"></Label>
+            <TextBox x:Name="Work_time" Height="25"></TextBox>
+            <Label Content="Город" Height="25"></Label>
+            <TextBox x:Name="Sity" Height="25"></TextBox>
+            <Label Content="Улица" Height="25"></Label>
+            <TextBox x:Name="Street" Height="25"></TextBox>
+            <Label Content="Ценовая категория(5-10)" Height="25"></Label>
+            <TextBox x:Name="StartPrice" Height="25"></TextBox>
+            <Label Content="Координаты" Height="25"></Label>
+            <TextBox x:Name="Cord" Height="25"></TextBox>
+
+
+            <RichTextBox x:Name="Dickript" Height="51"></RichTextBox>
+        <Button Content="Сохранить" Click="Button_Click"></Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

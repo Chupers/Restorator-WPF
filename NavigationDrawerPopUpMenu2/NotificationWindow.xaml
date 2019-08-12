@@ -1,0 +1,15 @@
+﻿<Window x:Class="Restorator.NotificationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NavigationDrawerPopUpMenu2"
+        mc:Ignorable="d"
+        Title="NotificationWindow" Height="150" Width="300" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <WrapPanel Background="#FF1C1C1B">
+        <TextBlock Foreground="AntiqueWhite" FontSize="15" Margin="20">Вы уверены что хотите это сделать?</TextBlock>
+        <Button Margin="40,10,0,0" VerticalAlignment="Center" Background="{x:Null}" Foreground="AntiqueWhite" BorderBrush="AntiqueWhite" Click="Button_Click">Уверен</Button>
+        <Button Margin="50,10,0,0" VerticalAlignment="Center"  BorderBrush="AntiqueWhite" Foreground="AntiqueWhite" Background="{x:Null}" Click="Button_Click_1">Отмена</Button>
+
+    </WrapPanel>
+</Window>

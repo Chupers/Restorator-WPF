@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Restorator.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restorator"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="300"  Loaded="UserControl_Loaded" >
+
+    <Grid x:Name="MainGrid" Margin="10,20,0,0" Width="320" Height='300'>
+        <Grid x:Name="DeleteGrid" Margin="10" HorizontalAlignment="Right" Visibility="Hidden" VerticalAlignment="Top" Panel.ZIndex="1" MouseDown="Grid_MouseDown_1" IsEnabled="False">
+            <materialDesign:PackIcon Kind="Delete" Height="30" Width="30" Foreground="Red" ></materialDesign:PackIcon>
+        </Grid>
+        <StackPanel  Background="#DDF5EBEB"  MouseDown="Grid_MouseDown"  >
+            <Image  x:Name="im"/>
+            <StackPanel>
+                <Label x:Name="Name_Of_Rest" FontSize="18" Height="40"/>
+                <Grid>
+                    <Button x:Name="LikeButton" Height="26" Foreground="Black" Background="{x:Null}" BorderBrush="Black" Click="Button_Click" HorizontalAlignment="Left" Margin="20,0,0,0">
+                        <WrapPanel Height="33">
+                            <materialDesign:PackIcon  Kind="Heart" Height="20" Width="20"/>
+                            <TextBlock x:Name="CountLike" FontSize="12"  HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Height="22">
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-2.142"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                        </WrapPanel>
+                    </Button>
+                    <Button x:Name="Button_time" Height="30" Foreground="#FF15D44F" Background="{x:Null}" BorderBrush="Black" Width="100" HorizontalAlignment="Right" Margin="0,0,20,0">
+                        <WrapPanel Height="30">
+                            <materialDesign:PackIcon x:Name="Clock" Kind="Clock" Height="20" Width="20"/>
+                            <TextBlock  x:Name="Clock_name" Text="Open" FontSize="15"  HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Height="25" Width="42" >
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-2.142"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+
+                        </WrapPanel>
+
+                    </Button>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

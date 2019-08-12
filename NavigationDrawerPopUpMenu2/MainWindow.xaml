@@ -1,0 +1,144 @@
+﻿<Window x:Name="Wind" x:Class="Restorator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Restorator"
+        mc:Ignorable="d" Height="600" Width="1080" Foreground="#FF31577E" WindowStartupLocation="CenterScreen" Background="#FF2F3028" ResizeMode="NoResize" WindowStyle="None" Icon="image_exempl/Logo.jpg">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="CommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    
+    <Window.Resources>
+
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid x:Name="Glaw" >
+
+        <Grid x:Name="GridMain" Margin="70,60,0,0" Background="#DDF5EBEB" >
+           
+
+
+        </Grid>
+
+
+        <Grid  Height="60" VerticalAlignment="Top" Background="#FF1C1C1B">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FF1C1C1B"/>
+            </Grid.Effect>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Background="#FF1C1C1B">
+                <TextBlock x:Name="Username" Text="Unknow" VerticalAlignment="Center" FontSize="18" Foreground="#DDF5EBEB"/>
+                <Button x:Name="Admin_button" Background="#FF1C1C1B" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,14,0,10" Width="60" Height="Auto" Click="Button_Click" Visibility="Hidden">
+                    <materialDesign:PackIcon Kind="Plus" Height="28" Width="32" Foreground="#DDF5EBEB" RenderTransformOrigin="0.487,-0.093" />
+                </Button>
+
+
+                <Button Panel.ZIndex="1"  Background="{x:Null}" Click="Button_Click_1" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="WindowMinimize" Height="30" Width="30" Foreground="AntiqueWhite"></materialDesign:PackIcon>
+                </Button>
+              
+                <Button Panel.ZIndex="1"  Background="{x:Null}"  Command="New" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="Clear" Height="30" Width="30" Foreground="AntiqueWhite"></materialDesign:PackIcon>
+                </Button>
+            </StackPanel>
+                
+
+        </Grid>
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF1C1C1B" MouseLeave="GridMenu_MouseLeave">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
+            </Grid.Effect>
+            <StackPanel>
+                <Grid Height="150" Background="#FF1C1C1B" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Button x:Name="ButtonOpenMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDF5EBEB" Click="ButtonOpenMenu_Click">
+                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="ButtonCloseMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#DDF5EBEB" Click="ButtonCloseMenu_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25" Foreground="#FFB9EDEB"/>
+                    </Button>
+
+                    <Image Height="80" VerticalAlignment="Bottom" OpacityMask="Black"/>
+                </Grid>
+                <ListView x:Name="ListViewMenu" SelectionMode="Single" Foreground="#DDF5EBEB" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" Height="365">
+                    <ListViewItem x:Name="ItemHome" Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Home" Height="25" Width="25" Margin="10" Foreground="#DDF5EBEB">
+                                <materialDesign:PackIcon.Background>
+                                    <ImageBrush/>
+                                </materialDesign:PackIcon.Background>
+                            </materialDesign:PackIcon>
+                            <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemCreate" Height="60" Foreground="#DDF5EBEB">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FoodVariant" Height="25" Width="25" Margin="10" Foreground="#DDF5EBEB"/>
+                            <TextBlock Text="Restaurant list" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60" x:Name="Find" Foreground="#DDF5EBEB">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" Height="25" Width="25" Margin="10" Foreground="#DDF5EBEB"/>
+                            <TextBlock Text="Find restaurant" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="Nearme" Height="60" Foreground="#DDF5EBEB">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="GoogleMaps" Height="25" Width="25" Margin="10" Foreground="#DDF5EBEB"/>
+                            <TextBlock Text="Nearme" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="Account" Height="60" Foreground="#DDF5EBEB">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Account" Height="25" Width="25" Margin="10" Foreground="#DDF5EBEB"/>
+                            <TextBlock Text="Account" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="Exit"  Height="60" Foreground="#DDF5EBEB" Margin="0 ">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ExitRun" Height="25" Width="25" Margin="10" Foreground="#DDF5EBEB"/>
+                            <TextBlock Text="Exit" VerticalAlignment="Center"  Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="1"  x:Name="N">
+                       
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+
+</Window>
+    

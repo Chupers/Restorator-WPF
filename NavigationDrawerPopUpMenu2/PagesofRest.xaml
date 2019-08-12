@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Restorator.PagesofRest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Restorator"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+           >
+    <ScrollViewer>
+        <Grid Background="#DDF5EBEB">
+            <materialDesign:PackIcon Kind="ArrowLeftBold" Height="30" Width="30"  Foreground="White" Margin="20" Panel.ZIndex="1" MouseDown="PackIcon_MouseDown"/>
+            <StackPanel  x:Name="Stacks">
+                <Grid Height="465">
+                    <Image x:Name="Images"   Source="image_exempl/domino-s-a-neighborhood-staple.jpg" Height="660" Margin="0,0,-0.333,0">
+
+                    </Image>
+                    <StackPanel Margin="715,0,-5,0" Background="#F2201B1B">
+
+                        <TextBlock  x:Name="Second_name" Text="Dominos"  FontSize="20" Foreground="#DDF5EBEB" FontWeight="Bold" Margin="40"></TextBlock>
+                        <WrapPanel Margin="20,10,20,20">
+                            <materialDesign:PackIcon Kind="Location" Height="25" Width="25"  Foreground="#DDF5EBEB" Margin="10"/>
+                            <TextBlock  x:Name="Location" Text="Find restaurant" FontSize="15" Foreground="#DDF5EBEB" Margin="5,15,15,15" TextWrapping="Wrap" />
+                        </WrapPanel>
+                        <WrapPanel Margin="20,10,20,20">
+                            <materialDesign:PackIcon Kind="AccessTime" Height="25" Width="25"  Foreground="#DDF5EBEB" Margin="10"/>
+                            <TextBlock  x:Name="time_of_work" Text="8:00-23:00" FontSize="17" Foreground="#DDF5EBEB" Margin="5,15,15,15"  />
+                        </WrapPanel>
+                        <WrapPanel Margin="20,10,20,20">
+                            <materialDesign:PackIcon Kind="Ruble" Height="25" Width="25"  Foreground="#DDF5EBEB" Margin="10"/>
+                            <TextBlock x:Name="Price" Text="15 -> 40" FontSize="20" Foreground="#DDF5EBEB" Margin="5,15,15,15"  />
+                        </WrapPanel>
+
+                    </StackPanel>
+                </Grid>
+                <WrapPanel Height="85">
+                    <Label x:Name="Rest_name" Content="Dominos" FontSize="20" Width="615" FontWeight="Bold" Margin="10" Foreground="#F2201B1B"></Label>
+                    <Image x:Name="Types" Source="image_exempl/016-pizza.png" Height="50" Margin="15" >
+
+                    </Image>
+
+                    <Button x:Name="Button_time" Height="48" Foreground="#FF15D44F" Background="{x:Null}" BorderBrush="Black" Margin="10" Width="110">
+                        <WrapPanel Height="30">
+                            <materialDesign:PackIcon x:Name="Clock" Kind="Clock" Height="30" Width="30"/>
+                            <TextBlock  x:Name="Clock_name" Text="Open" FontSize="15"  HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Height="25" Width="42" >
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-2.142"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+
+                        </WrapPanel>
+
+                    </Button>
+                    <Button x:Name="LikeButton" Height="50" Foreground="Black" Background="{x:Null}" BorderBrush="Black" Width="75"  HorizontalAlignment="Right" Margin="10" Click="Button_Click">
+                        <WrapPanel Height="33">
+                            <materialDesign:PackIcon  Kind="Heart" Height="40" Width="30"/>
+                            <TextBlock x:Name="CountLike" FontSize="12"  HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" Height="22">
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-2.142"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+
+                        </WrapPanel>
+
+                    </Button>
+
+                </WrapPanel>
+                <Separator Foreground="#F2201B1B" Background="#F2201B1B"></Separator>
+                <WrapPanel Margin="20" >
+                    <materialDesign:PackIcon  Kind="FormatListBulleted" Height="30" Width="30" Foreground="#F2201B1B" Margin="10"/>
+                    <TextBlock Text="Описание" FontSize="15" FontWeight="Bold"  Foreground="#F2201B1B" Height="22" Margin="5"/>
+                </WrapPanel>
+                <Border BorderBrush="#F2201B1B" BorderThickness="1" Margin="20,10,20,20">
+                    <TextBlock x:Name="Discription_blok"  Foreground="#F2201B1B"  FontSize="15" Height="150" Margin="10" TextWrapping="Wrap" ></TextBlock>
+                </Border>
+                <Separator Foreground="#DDF5EBEB" Background="#F2201B1B"></Separator>
+                <WrapPanel Margin="20" >
+                    <materialDesign:PackIcon  Kind="Book" Height="30" Width="30" Foreground="#F2201B1B" Margin="10"/>
+                    <TextBlock Text="Отзывы" FontSize="15" FontWeight="Bold"  Foreground="#F2201B1B" Height="22" Margin="5"/>
+                </WrapPanel>
+                <StackPanel x:Name="Comments"></StackPanel>
+                <TextBlock Text="Ваш отзыв" FontSize="15" FontWeight="Bold"  Foreground="#F2201B1B" Height="22" Margin="30,0,0,0"/>
+                <WrapPanel>
+                    <RichTextBox x:Name="Your_comment" Margin="20" Height="75" Width="780"></RichTextBox>
+                    <Button Background="#FF050000" BorderBrush="#FFF0F3F5" Click="Button_Click_1" Content="Отсавить отзыв"></Button>
+                </WrapPanel>
+                <Separator></Separator>
+                <Grid x:Name="Map"></Grid>
+
+            </StackPanel>
+            
+        </Grid>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Restorator.Search"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restorator"
+               xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#DDF5EBEB">
+        <WrapPanel Margin="30" Background="#B2F5EBEB" >
+            <TextBox x:Name="Text_find" Background="#DDF5EBEB" HorizontalAlignment="Center"  Height="35" BorderBrush="#FF050000" materialDesign:HintAssist.Hint="Название" Width="160" BorderThickness="2" Foreground="#FF090101"  CaretBrush="#FFF32147">
+            </TextBox>
+            <WrapPanel VerticalAlignment="Center" Margin="30">
+                <Label Content="Открыто сейчас" Height="35" VerticalAlignment="Center"></Label>
+                <CheckBox x:Name="CheckTime" Background="Black" ></CheckBox>
+            </WrapPanel>
+            <ComboBox x:Name="SelectCombo" Width="108" Margin="30"  materialDesign:HintAssist.Hint="Тип Заведения" SelectionChanged="SelectCombo_Selected">
+                <ComboBoxItem x:Name="Ресторан" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/010-wine.png"></Image>
+                        <TextBlock Text="Ресторан" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Пиццерия" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/016-pizza.png"></Image>
+                        <TextBlock Text="Пиццерия" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Кофейня" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/012-coffee-1.png"></Image>
+                        <TextBlock Text="Кофейня" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Бар" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/028-wine-1.png"></Image>
+                        <TextBlock Text="Бар" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="ФастФуд" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/009-burger.png"></Image>
+                        <TextBlock Text="ФастФуд" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+                <ComboBoxItem x:Name="Кафе" Height="50" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="image_exempl/050-cafe.png"></Image>
+                        <TextBlock Text="Кафе" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ComboBoxItem>
+
+            </ComboBox>
+            <Button Background="#FF050000" BorderBrush="#FFF0F3F5" Click="Find_button_Click">
+                <WrapPanel>
+                    <Label Content="Найти" VerticalAlignment="Center" Height="30" Foreground="WhiteSmoke"></Label>
+                    <materialDesign:PackIcon Kind="Search" VerticalAlignment="Center"></materialDesign:PackIcon>
+                </WrapPanel>
+            </Button>
+        </WrapPanel>
+
+        <ScrollViewer Margin="0,120,0,0" Grid.RowSpan="2">
+            <WrapPanel x:Name="Result_panel" Margin="0,90,0,0">
+
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
